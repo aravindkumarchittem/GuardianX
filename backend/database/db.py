@@ -13,7 +13,8 @@
 
 from pymongo import MongoClient
 
-MONGO_URI = "mongodb+srv://admin:admin123@cluster0.ovdjtzu.mongodb.net/guardianx_db?retryWrites=true&w=majority"
+import os
+MONGO_URI = os.getenv("MONGO_URI")
 
 client = MongoClient(
     MONGO_URI,
