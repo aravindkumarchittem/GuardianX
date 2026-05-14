@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GuardianX — Threat Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="dashboard-wrapper">
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">🛡️</div>
+      <div>
+        <div class="brand-name">GuardianX</div>
+        <div class="brand-tagline">Threat Intelligence Dashboard</div>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">
+        <span id="themeIcon">☀️</span>
+        <span id="themeLabel">Light Mode</span>
+      </button>
+      <button class="btn btn-ghost" onclick="logout()">⎋ Logout</button>
+    </div>
+  </header>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar" id="statsBar">
+    <div class="stat-card total">
+      <div class="stat-label">Total Flagged</div>
+      <div class="stat-value" id="statTotal">—</div>
+    </div>
+    <div class="stat-card danger">
+      <div class="stat-label">Danger</div>
+      <div class="stat-value" id="statDanger">—</div>
+    </div>
+    <div class="stat-card warn">
+      <div class="stat-label">Suspicious</div>
+      <div class="stat-value" id="statSuspicious">—</div>
+    </div>
+    <div class="stat-card safe">
+      <div class="stat-label">Safe</div>
+      <div class="stat-value" id="statSafe">—</div>
+    </div>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" data-type="all" onclick="filterMessages('all', this)">
+      <span class="dot dot-all"></span> All
+    </button>
+    <button class="filter-btn" data-type="danger" onclick="filterMessages('danger', this)">
+      <span class="dot dot-danger"></span> Danger
+    </button>
+    <button class="filter-btn" data-type="suspicious" onclick="filterMessages('suspicious', this)">
+      <span class="dot dot-suspicious"></span> Suspicious
+    </button>
+  </div>
+
+  <!-- Messages -->
+  <div id="messages-container"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>GuardianX Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>GuardianX Threat Dashboard</h1>
+
+    <div class="filters">
+        <button onclick="filterMessages('all')">All</button>
+        <button onclick="filterMessages('suspicious')">Suspicious</button>
+        <button onclick="filterMessages('danger')">Danger</button>
+    </div>
+
+    <div id="messages-container"></div>
+<button onclick="logout()">Logout</button>
+    <script src="script.js"></script>
+</body>
+</html> -->
